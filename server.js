@@ -6,7 +6,12 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const COUNT_FILE = "count.json";
 
-app.use(cors());
+app.use(cors({
+    origin: "*", // Allows all origins (use only for testing)
+    methods: "GET", // Allow only GET requests
+    allowedHeaders: ["Content-Type"]
+}));
+
 
 function readCount() {
     if (!fs.existsSync(COUNT_FILE)) {
