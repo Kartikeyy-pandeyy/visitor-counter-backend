@@ -32,6 +32,6 @@ app.get("/api/visitors", (req, res) => {
     res.json({ count });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
